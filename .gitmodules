@@ -5,3 +5,7 @@
 [submodule "deps/hayai"]
 	path = deps/hayai
 	url = https://github.com/nickbruun/hayai.git
+[submodule "deps/LuaState"]
+	path = deps/LuaState
+	url = https://github.com/AdUki/LuaState.git
+	branch = master
