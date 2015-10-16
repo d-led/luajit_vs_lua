@@ -7,6 +7,7 @@ struct LuaBenchmark : public ::hayai::Fixture {
 
     LuaBenchmark() {
         state.doString(R"(
+
 function multiply(a,b)
     return a*b
 end
