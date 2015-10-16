@@ -42,6 +42,11 @@ make_console_app('luajit_21_benchmark',{
 			luajit..'/bin/x32'
 		}
 		post_build_deploy([[$(SolutionDir)../../../]]..luajit..'/bin/x32/*.dll')
+	filter { 'platforms:*64' }
+		libdirs {
+			luajit..'/bin/x64'
+		}
+		post_build_deploy([[$(SolutionDir)../../../]]..luajit..'/bin/x64/*.dll')
 	filter {}
 
 
@@ -55,19 +60,26 @@ make_console_app('lua53_benchmark',{
 
 	removeplatforms { 'native' }
 
-	lua53 = 'deps/lua/lua-5.3_Win32_dll12_lib'
-
-	includedirs {
-		lua53..'/include'
-	}
+	lua53 = 'deps/lua'
 
 	links 'lua53'
 
 	defines 'LUA_COMPAT_5_2'
 
 	filter { 'platforms:*32' }
-		libdirs {
-			lua53
+		includedirs {
+			lua53..'/lua-5.3_Win32_dll12_lib/include'
 		}
-		post_build_deploy([[$(SolutionDir)../../../]]..lua53..'/*.dll')
+		libdirs {
+			lua53..'/lua-5.3_Win32_dll12_lib'
+		}
+		post_build_deploy([[$(SolutionDir)../../../]]..lua53..'/lua-5.3_Win32_dll12_lib/*.dll')
+	filter { 'platforms:*64' }
+		includedirs {
+			lua53..'/lua-5.3_Win64_dll12_lib/include'
+		}
+		libdirs {
+			lua53..'/lua-5.3_Win64_dll12_lib'
+		}
+		post_build_deploy([[$(SolutionDir)../../../]]..lua53..'/lua-5.3_Win64_dll12_lib/*.dll')
 	filter {}

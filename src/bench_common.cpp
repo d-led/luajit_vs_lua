@@ -7,7 +7,7 @@ struct LuaBenchmark : public ::hayai::Fixture {
 };
 
 BENCHMARK_F(LuaBenchmark,SimpleAddition,1000,1000) {
-    state.doString("local r = 2+2");
+    state.doString("assert(2+2==4)");
 }
 
 int main()
@@ -18,6 +18,12 @@ int main()
     hayai::ConsoleOutputter consoleOutputter;
 
     hayai::Benchmarker::AddOutputter(consoleOutputter);
-    hayai::Benchmarker::RunAllTests();
+
+    try {
+        hayai::Benchmarker::RunAllTests();
+    }
+    catch (std::exception& e) {
+        std::cerr << e.what() << std::endl;
+    }
     return 0;
 }
