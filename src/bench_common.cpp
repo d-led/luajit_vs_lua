@@ -39,6 +39,10 @@ BENCHMARK_F(LuaBenchmark, CallingAFunctionPCall, 1000, 1000) {
     state.doString("pcall(function() assert(multiply(2,3)==6) end)");
 }
 
+BENCHMARK_F(LuaBenchmark, ThousandTimesBla, 1000, 1000) {
+    state.doString("string.rep('bla',1000)");
+}
+
 
 int main(int argc, char* argv[])
 {
