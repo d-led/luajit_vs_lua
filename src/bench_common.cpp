@@ -4,16 +4,42 @@
 
 struct LuaBenchmark : public ::hayai::Fixture {
     lua::State state;
+
+    LuaBenchmark() {
+        state.doString(R"(
+function multiply(a,b)
+    return a*b
+end
+
+)");
+    }
 };
 
 BENCHMARK_F(LuaBenchmark,SimpleAddition,1000,1000) {
     state.doString("assert(2+2==4)");
 }
 
-int main()
-{
+BENCHMARK_F(LuaBenchmark, SimpleMultiplication, 1000, 1000) {
+    state.doString("assert(2*3==6)");
+}
 
-    lua::State().doString("print('Benchmarking '.._VERSION)");
+BENCHMARK_F(LuaBenchmark, CallingAFunction, 1000, 1000) {
+    state.doString("assert(multiply(2,3)==6)");
+}
+
+BENCHMARK_F(LuaBenchmark, DefiningAndCallingALocalFunction, 1000, 1000) {
+    state.doString("local function multiply2(a,b) return a*b; end; assert(multiply2(2,3)==6)");
+}
+
+BENCHMARK_F(LuaBenchmark, CallingAFunctionPCall, 1000, 1000) {
+    state.doString("pcall(function() assert(multiply(2,3)==6) end)");
+}
+
+
+int main(int argc, char* argv[])
+{
+    lua::State().doString(std::string("print('Benchmarking '.._VERSION..[[: ") + argv[0] + "]])");
+    std::cout << std::endl;
 
     hayai::ConsoleOutputter consoleOutputter;
 
