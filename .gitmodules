@@ -1,0 +1,7 @@
+[submodule "premake"]
+	path = premake
+	url = https://github.com/d-led/premake-meta-cpp.git
+	branch = master
+[submodule "deps/hayai"]
+	path = deps/hayai
+	url = https://github.com/nickbruun/hayai.git
