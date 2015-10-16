@@ -19,6 +19,10 @@ BENCHMARK_F(LuaBenchmark,SimpleAddition,1000,1000) {
     state.doString("assert(2+2==4)");
 }
 
+BENCHMARK_F(LuaBenchmark, SimpleStringConcatenation, 1000, 1000) {
+    state.doString("assert('2'..'+'..'2'..'==4' == '2+2==4')");
+}
+
 BENCHMARK_F(LuaBenchmark, SimpleMultiplication, 1000, 1000) {
     state.doString("assert(2*3==6)");
 }
