@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "luajit_21_benchmark", "luajit_21_benchmark.vcxproj", "{5AD2E8FD-C633-C60B-4FA1-0CBEBB01FDCA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua53_benchmark", "lua53_benchmark.vcxproj", "{593213A6-C5BD-806A-CECE-035F3AD9DC6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AD2E8FD-C633-C60B-4FA1-0CBEBB01FDCA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5AD2E8FD-C633-C60B-4FA1-0CBEBB01FDCA}.Debug|Win32.Build.0 = Debug|Win32
+		{5AD2E8FD-C633-C60B-4FA1-0CBEBB01FDCA}.Debug|x64.ActiveCfg = Debug|x64
+		{5AD2E8FD-C633-C60B-4FA1-0CBEBB01FDCA}.Debug|x64.Build.0 = Debug|x64
+		{5AD2E8FD-C633-C60B-4FA1-0CBEBB01FDCA}.Release|Win32.ActiveCfg = Release|Win32
+		{5AD2E8FD-C633-C60B-4FA1-0CBEBB01FDCA}.Release|Win32.Build.0 = Release|Win32
+		{5AD2E8FD-C633-C60B-4FA1-0CBEBB01FDCA}.Release|x64.ActiveCfg = Release|x64
+		{5AD2E8FD-C633-C60B-4FA1-0CBEBB01FDCA}.Release|x64.Build.0 = Release|x64
+		{593213A6-C5BD-806A-CECE-035F3AD9DC6A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{593213A6-C5BD-806A-CECE-035F3AD9DC6A}.Debug|Win32.Build.0 = Debug|Win32
+		{593213A6-C5BD-806A-CECE-035F3AD9DC6A}.Debug|x64.ActiveCfg = Debug|x64
+		{593213A6-C5BD-806A-CECE-035F3AD9DC6A}.Debug|x64.Build.0 = Debug|x64
+		{593213A6-C5BD-806A-CECE-035F3AD9DC6A}.Release|Win32.ActiveCfg = Release|Win32
+		{593213A6-C5BD-806A-CECE-035F3AD9DC6A}.Release|Win32.Build.0 = Release|Win32
+		{593213A6-C5BD-806A-CECE-035F3AD9DC6A}.Release|x64.ActiveCfg = Release|x64
+		{593213A6-C5BD-806A-CECE-035F3AD9DC6A}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
