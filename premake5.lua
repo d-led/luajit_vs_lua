@@ -4,7 +4,7 @@ make_solution 'benchmarking_lua'
 
 function post_build_deploy(what)
 	local command
-	if os.get() == 'system:windows' then
+	if os.get() == 'windows' then
 		command = [[xcopy "]]..what:gsub('/','\\')..[[" "$(TargetDir)" /s /d /y]]
 	else
 		command = 'cp ' .. what .. [[ "$(TARGETDIR)"]]
@@ -56,8 +56,8 @@ make_console_app('luajit_21_benchmark',{
 		libdirs {
 			'/usr/local/lib/'
 		}
-		use_standard 'c++11'
 		links 'luajit-5.1'
+		use_standard 'c++11'
 	filter {}
 
 
